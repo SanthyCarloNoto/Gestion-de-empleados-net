@@ -1,0 +1,35 @@
+﻿@page
+@model GestionEmpleadosWebApp.Pages.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Empleados</title>
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+</head>
+<body>
+    <h1>Lista de Empleados</h1>
+
+    <a href="/Create" class="btn">Alta Empleados</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Cargo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empleado in Model.Empleados)
+            {
+                <tr>
+                    <td>@empleado.Id</td>
+                    <td>@empleado.Nombre</td>
+                    <td>@empleado.Cargo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
